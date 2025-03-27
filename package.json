@@ -1,0 +1,36 @@
+{
+  "name": "bartech_revolution",
+  "version": "1.0.0",
+  "description": "proyecto formativo en NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KarolCamacho/BarTech-Revolutionv1.0.0.git"
+  },
+  "keywords": [
+    "Node",
+    "bar",
+    "proyecto",
+    "gestion",
+    "formativo"
+  ],
+  "author": "Sara Quintero Nicol Correa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KarolCamacho/BarTech-Revolutionv1.0.0/issues"
+  },
+  "homepage": "https://github.com/KarolCamacho/BarTech-Revolutionv1.0.0#readme",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.13.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
