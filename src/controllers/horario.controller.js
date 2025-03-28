@@ -1,51 +1,49 @@
-const modeloCargo = require('../models/cargo.model');
-const modeloUsuario = require('../models/usuario.model');
+const modeloHorario = require('../models/horario.model.js');
+const modeloUsuario = require('../models/usuario.model.js');
 
 exports.add = async (req, res) => {
     let buscarUsuario = await modeloUsuario.findOne({"documento":req.body.documento});
     let resultado = res.json(buscarUsuario);
 
-    let cargo = new modeloCargo({
+    let horario = new modeloHorario({
+        "hora_inicio": resultado.hora_inicio,
+        "hora_fin": resultado.hora_fin,
+        "fecha": req.body.fecha,
         "usuario": resultado._id,
-        "roles": req.body.roles,
     });
-    await cargo.save();
+    await horario.save()
 }
 
 exports.read = async (req, res) => {
-    let cargo = await modeloCargo.find();
-    if(cargo){
-        res.json(cargo);
+    let horario = await modeloHorario.find();
+    if(horario){
+        res.json(horario);
     }else{
         res.status(404).json({"message": "No se encontraron registros"});
     }
 }
 
 exports.update = async (req, res) => {
-    let buscarUsuario = await modeloUsuario.findOne({"documento":req.body.documento});
-    let resultado = res.json(buscarUsuario);
-
-    let cargo = await modeloCargo.findOneAndUpdate(
-        {"usuario": resultado._id},
+    let horario = await modeloHorario.findOneAndUpdate(
+        {"_id": req.params.id},
         {
+            "hora_inicio": resultado.hora_inicio,
+            "hora_fin": resultado.hora_fin,
+            "fecha": req.body.fecha,
             "usuario": req.body.usuario,
-            "roles": req.body.roles,
         }
     );
-    if(cargo){
-        res.json({"message": "Cargo actualizado correctamente"});
-    }else{
-        res.status(404).json({"message": "No se encontraron registros"});
+    if(horario){
+        res.json({"message": "Horario actualizado correctamente"});
     }
 }
 
 exports.delete = async (req, res) => {
     let buscarUsuario = await modeloUsuario.findOne({"documento":req.body.documento});
     let resultado = res.json(buscarUsuario);
-
-    let cargo = await modeloCargo.findOneAndDelete({usuario: resultado._id});;
-    if(cargo){
-        res.json({"message": "Cargo eliminado correctamente"});
+    let horario = await modeloHorario.findOneAndDelete({"usuario": resultado._id});
+    if(horario){
+        res.json({"message": "Horario eliminado correctamente"});
     }else{
         res.status(404).json({"message": "No se encontraron registros"});
     }
@@ -54,10 +52,9 @@ exports.delete = async (req, res) => {
 exports.search = async (req, res) => {
     let buscarUsuario = await modeloUsuario.findOne({"documento":req.body.documento});
     let resultado = res.json(buscarUsuario);
-
-    let cargo = await modeloCargo.findOne({"usuario": resultado._id});
-    if(cargo){
-        res.json(cargo);
+    let horario = await modeloHorario.findOne({"usuario": resultado._id});
+    if(horario){
+        res.json({horario});
     }else{
         res.status(404).json({"message": "No se encontraron registros"});
     }
