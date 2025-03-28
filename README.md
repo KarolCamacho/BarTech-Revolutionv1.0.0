@@ -22,4 +22,4 @@ Proyecto formativo del SENA
 - [X] Creación del index **- Sara Quintero**
 - [X] Creación de los routers **- Sara Quintero**
 - [X] Crear los modelos **- Karol Camacho , Sara Quintero**
-- [ ] Crear los controladores **- Nicol Correa**
+- [X] Crear los controladores **- Nicol Correa**
