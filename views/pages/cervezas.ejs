@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cerveza</title>
-    <link rel="stylesheet" href="{% static 'css/categorias.css' %}">
+    <link rel="stylesheet" href="/css/categorias.css">
 </head>
 <body>
 <header>
@@ -19,7 +19,7 @@
 
 <ul>
   {% for producto in cerveza %}
-  <li class="product-item" data-price="{{ producto.precio }}" data-category="Cervezas">
+  < class="product-item" data-price="{{ producto.precio }}" data-category="Cervezas">
     <form method="post" action="{% url 'agregar_carrito' %}">
       {% csrf_token %}
       <div class="product-container">
@@ -38,10 +38,10 @@
           <button type="submit">Añadir al carrito</button>
       </div>
     </form>
-  </li>
+  <
   {% endfor %}
 </ul>
 
-<script src="{% static 'js/contador.js' %}"></script>
+<script src="/js/contador.js"></script>
 </body>
 </html>

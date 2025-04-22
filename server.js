@@ -1,7 +1,8 @@
 // load the things we need
 var express = require('express');
+var path = require('path');
 var app = express();
-app.use("/public",express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
