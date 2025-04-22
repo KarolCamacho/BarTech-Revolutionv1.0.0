@@ -1,6 +1,6 @@
 const exp = require('express');
 require('dotenv').config();
-const router = require('./routes/router');
+const router = require('../../routes/router');
 const app = exp();
 
 app.use(exp.json());

@@ -2,7 +2,7 @@
   "name": "bartech_revolution",
   "version": "1.0.0",
   "description": "proyecto formativo en NodeJS",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
@@ -27,6 +27,7 @@
   "homepage": "https://github.com/KarolCamacho/BarTech-Revolutionv1.0.0#readme",
   "dependencies": {
     "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
     "express": "^4.21.2",
     "mongoose": "^8.13.0"
   },
